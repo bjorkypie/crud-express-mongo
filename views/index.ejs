@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>HARRY POTTER QUOTES</title>
+    <link rel="stylesheet" type='text/css' href="/css/style.css">
+    <link rel="stylesheet" type='text/css' href="/css/normalize.css">
+    <link rel="stylesheet" type='text/css' href="/css/reset.css">
+</head>
+<body>
+    <section class='container heading'>
+        <h1 class='title main'>Harry Potter Quotes</h1>
+        <h2 class='quote'><q>You're just as sane as I am.</q> <cite>Luna Lovegood</cite></h2>
+        <form class='container form' action="/quotes" method="POST">
+            <input type="text" placeholder="Quote" name="quote">
+            <input type="text" placeholder="Name" name="name">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section class='container'>
+        <h2 class='title'>Voldemort Returns</h2>
+        <p class='caption'>
+            Replace Dumbledore's first quote with a quote written by Voldemort.
+        </p>
+        <button id='update-button'>Replace Dumbledore's quote</button>
+    </section>
+    <section class='container'>
+        <h2 class='title'>Remove Voldemort!</h2>
+        <p class='caption'>
+            Deletes one Voldemort quote. Does nothing if there are no more Voldemort quotes.
+        </p>
+        <button id='delete-button'>Delete Voldemort's Quote</button>
+        <p class='error-msg' id='noVoldy'></p>
+    </section>
+    
+    <section class='container list'>
+        <h2 class='title'>Quotes</h2>
+        <ul class="quotes">
+            <!-- Loop through quotes -->
+            <% for(let i = 0; i < quotes.length; i++) {%>
+                <li>
+                    <!-- output quote from iterated quote object -->
+                    <q><%= quotes[i].quote %></q>
+                    <!-- output name from iterated quote object -->
+                    <cite><%= quotes[i].name %></cite>
+                    
+                </li>
+            <% } %>
+        </ul>
+    </section>
+    
+    
+    <script src='/main.js'></script>
+</body>
+</html>
